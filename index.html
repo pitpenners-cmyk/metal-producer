@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metal Producer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="branding">
+          <span class="brand-mark">M</span>
+          <div>
+            <div class="eyebrow">Darkwave Studio</div>
+            <h1>Rift Forge</h1>
+          </div>
+        </div>
+
+        <div class="transport">
+          <button id="play-btn" class="primary">Play</button>
+          <button id="stop-btn" class="secondary">Stop</button>
+        </div>
+      </header>
+
+      <div class="content-grid">
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel-header">
+              <span>Genre DNA</span>
+            </div>
+            <div class="genre-list" id="genre-list">
+              <button class="genre selected" data-genre="nu-metal">Nu-metal</button>
+              <button class="genre" data-genre="metalcore">Metalcore</button>
+              <button class="genre" data-genre="rap-rock">Rap-rock</button>
+              <button class="genre" data-genre="industrial">Industrial</button>
+            </div>
+          </section>
+
+          <section class="panel controls-panel">
+            <div class="panel-header">
+              <span>Session</span>
+            </div>
+
+            <div class="control-wrap">
+              <label for="tempo-slider">Tempo</label>
+              <div class="value-row">
+                <span id="tempo-value">140 BPM</span>
+              </div>
+              <input id="tempo-slider" type="range" min="90" max="200" value="140" />
+            </div>
+
+            <div class="control-wrap">
+              <label for="volume-slider">Output</label>
+              <div class="value-row">
+                <span id="volume-value">82%</span>
+              </div>
+              <input id="volume-slider" type="range" min="20" max="100" value="82" />
+            </div>
+
+            <div class="control-wrap">
+              <label for="drive-slider">Drive</label>
+              <div class="value-row">
+                <span id="drive-value">68%</span>
+              </div>
+              <input id="drive-slider" type="range" min="0" max="100" value="68" />
+            </div>
+          </section>
+        </aside>
+
+        <main class="workspace">
+          <section class="panel">
+            <div class="panel-header">
+              <span>Signal Chain</span>
+              <span class="panel-tag">Aggressive</span>
+            </div>
+
+            <div class="track-strip">
+              <div class="track-card">
+                <div class="track-top">
+                  <span>Drums</span>
+                  <span class="signal-pill">+ Distortion</span>
+                </div>
+                <div class="meter">
+                  <span style="width: 88%"></span>
+                </div>
+              </div>
+
+              <div class="track-card">
+                <div class="track-top">
+                  <span>Guitar</span>
+                  <span class="signal-pill">+ Saturation</span>
+                </div>
+                <div class="meter">
+                  <span style="width: 76%"></span>
+                </div>
+              </div>
+
+              <div class="track-card">
+                <div class="track-top">
+                  <span>Bass</span>
+                  <span class="signal-pill">+ Sub</span>
+                </div>
+                <div class="meter">
+                  <span style="width: 81%"></span>
+                </div>
+              </div>
+
+              <div class="track-card">
+                <div class="track-top">
+                  <span>Lead Vox</span>
+                  <span class="signal-pill">+ Reverb</span>
+                </div>
+                <div class="meter">
+                  <span style="width: 72%"></span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel sequencer-panel">
+            <div class="panel-header">
+              <span>Pattern Grid</span>
+              <button id="randomize-btn" class="mini-btn">Randomize</button>
+            </div>
+
+            <div id="sequencer" class="sequencer"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "metal-producer",
+  "version": "0.1.0",
+  "description": "Desktop music production app for metal, nu-metal, and rap-rock workflows",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^31.0.0"
+  }
+}
